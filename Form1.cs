@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -64,7 +64,7 @@ namespace ClubExcel
                 Excel.Application xApp = new Excel.Application();
                 Excel.Workbook xBook = xApp.Workbooks.Add(true);
                 Excel.Worksheet xSheet = xApp.ActiveSheet as Microsoft.Office.Interop.Excel.Worksheet;
-                xApp.Visible = true;
+                xApp.Visible = false;
 
                 //initializing the preadsheet
                 xSheet.Cells[1, 1] = ("Name");
@@ -107,6 +107,7 @@ namespace ClubExcel
         private void button1_Click(object sender, EventArgs e)
         {
             openSheet();
+            MessageBox.Show("Response has been submitted.\n", "Success!", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -121,7 +122,7 @@ namespace ClubExcel
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This application was created by\n\nMd. Mujtaba Asif\nDepartment of Computer Science and Engineering\nEast West University\n", "Thank You", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("This application was created by\n\nMd. Mujtaba Asif\nDepartment of Computer Science and Engineering\nEast West University\n\nResponses will be found in \n\\Desktop\\response.xlsx file\n", "Thank You", MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
